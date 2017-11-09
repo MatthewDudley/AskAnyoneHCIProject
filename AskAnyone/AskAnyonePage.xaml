@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Tabbed Layout -->
-<TabbedPage Title="                      ASK ANYONE" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AskAnyone" x:Class="AskAnyone.AskAnyonePage">
+<TabbedPage Title="ASK ANYONE" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AskAnyone" x:Class="AskAnyone.AskAnyonePage">
 
     <!-- My Questions Tab -->
     <ContentPage Title="My Questions" Padding="10,20">
