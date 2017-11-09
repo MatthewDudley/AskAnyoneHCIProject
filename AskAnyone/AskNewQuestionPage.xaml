@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="          Ask New Question" 
+             xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AskAnyone.AskNewQuestionPage">
+    <ContentPage.Content>
+        
+        <StackLayout Padding="10,50">
+
+            <Label Text="Ask Anyone a question to recieve an answer!" HorizontalOptions="Center" TextColor="Black" Font="15" />
+            
+            <Frame Padding="5,5">
+                <Editor x:Name="AskFeild" Keyboard="Chat" FontSize="15" HeightRequest="100" />
+            </Frame>
+            
+            <Button Text="Ask" TextColor="White" BackgroundColor="#11a0ff" Clicked="Ask_Clicked" />
+                
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

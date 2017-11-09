@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Tabbed Layout -->
+<TabbedPage Title="                      ASK ANYONE" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AskAnyone" x:Class="AskAnyone.AskAnyonePage">
+
+    <!-- My Questions Tab -->
+    <ContentPage Title="My Questions" Padding="10,20">
+
+        <!-- Content on the Page -->
+        <ContentPage.Content>
+
+            <!-- Grid layout -->
+            <Grid>
+
+                <!-- Grid height set to Auto -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Ask New Question button -->
+                <Button x:Name="AskNewQuestionButton" Text="Ask New Question" TextColor="White" BackgroundColor="#11a0ff" Clicked="Handle_NewQuestionClicked" Grid.Row="0" />
+
+                <ScrollView Grid.Row="1">
+                    <!-- Stack Layout -->
+                    <StackLayout x:Name="MyQuestions" Padding="1,10">
+
+                        <!-- 
+                              MyQuestionsList - Layout for displaying questions 
+                              you have asked as well as answers you recieve back 
+                        -->
+
+                        <Button Text="Question you have asked goes here" BackgroundColor="Transparent" HeightRequest="100" Clicked="Handle_ViewQuestionClicked" />
+                        
+                    </StackLayout>
+                </ScrollView>
+                        
+            </Grid>
+                
+        </ContentPage.Content>
+
+    </ContentPage>
+
+
+
+    <!-- My Answers Tab -->
+    <ContentPage Title="My Answers" Padding="10,20">
+        <ContentPage.Content>
+
+            <!-- Scroll View -->
+            <ScrollView>
+
+                <StackLayout x:Name="MyAnswersList" Padding="1,10">
+
+                    <!-- 
+                         MyAnswersList - layout for incoming questions you can answer
+                         Displays the question and answer if answered and the question 
+                         and a place for you to answer if not answered
+                    -->
+
+                    <Button Text="Question sent to you goes here" BackgroundColor="Transparent" HeightRequest="100" Clicked="Handle_ViewQuestionClicked" />
+                    
+                </StackLayout>
+
+            </ScrollView>
+
+        </ContentPage.Content>
+
+    </ContentPage>
+
+</TabbedPage>
