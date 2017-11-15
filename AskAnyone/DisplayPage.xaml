@@ -5,11 +5,28 @@
 
     <ContentPage.Content>
         
-        <StackLayout x:Name="DisplayPageStack" Padding="10,10">
+        <StackLayout x:Name="DisplayPageStack" Padding="10,40">
 
             <Label Text="Question:" TextColor="Black" FontSize="20" HorizontalOptions="Center" />
            
             <!-- Display the question here  -->
+            <Frame>
+
+                <Label x:Name="QuestionLabel" TextColor="Black" FontSize="16" HorizontalOptions="Center" />
+
+            </Frame>
+
+            <Label></Label>
+            <Label></Label>
+            
+            <Label Text="Answer:" TextColor="Black" FontSize="20" HorizontalOptions="Center" />
+           
+            <!-- Display the question here  -->
+            <Frame>
+
+                <Label x:Name="AnswerLabel" TextColor="Black" FontSize="16" HorizontalOptions="Center" />
+
+            </Frame>
 
         </StackLayout>
 

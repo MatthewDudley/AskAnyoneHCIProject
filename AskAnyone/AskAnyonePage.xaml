@@ -28,8 +28,10 @@
                               MyQuestionsList - Layout for displaying questions 
                               you have asked as well as answers you recieve back 
                         -->
-
-                        <Button Text="Question you have asked goes here" BackgroundColor="Transparent" HeightRequest="100" Clicked="Handle_ViewQuestionClicked" />
+                        
+                        <Button x:Name="DefaultQuestion" Text=" " BackgroundColor="Transparent" HeightRequest="100" Clicked="Handle_ViewQuestionClicked" >
+                            
+                        </Button>
                         
                     </StackLayout>
                 </ScrollView>

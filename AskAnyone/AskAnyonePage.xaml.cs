@@ -10,6 +10,9 @@ namespace AskAnyone
         public AskAnyonePage()
         {
             InitializeComponent();
+
+            DefaultQuestion.Text = "Is pluto a planet?\nNo, pluto is not a planet.";
+            DefaultQuestion.Image = "icecream.png";
         }
 
         void Handle_NewQuestionClicked(object sender, System.EventArgs e)
