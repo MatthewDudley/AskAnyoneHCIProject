@@ -28,11 +28,19 @@
                               MyQuestionsList - Layout for displaying questions 
                               you have asked as well as answers you recieve back 
                         -->
-                        
-                        <Button x:Name="DefaultQuestion" Text=" " BackgroundColor="Transparent" HeightRequest="100" Clicked="Handle_ViewQuestionClicked" >
-                            
+
+                        <Button x:Name="DefaultQuestion1" Text="Hello" BackgroundColor="Transparent" HeightRequest="75" Clicked="Handle_ViewQuestionClicked" >
+
                         </Button>
-                        
+
+                        <Button x:Name="DefaultQuestion2" Text="Hello" BackgroundColor="Transparent" HeightRequest="75" Clicked="Handle_ViewQuestionClicked" >
+
+                        </Button>
+
+                        <Button x:Name="HiddenQuestion1" Text="" BackgroundColor="Transparent" HeightRequest="75" Clicked="Handle_ViewQuestionClicked" >
+
+                        </Button>
+
                     </StackLayout>
                 </ScrollView>
                         
