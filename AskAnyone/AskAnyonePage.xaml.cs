@@ -11,20 +11,15 @@ namespace AskAnyone
         {
             InitializeComponent();
 
-            InsertNewQuestion("Smtext\nsmtext");
-            InsertNewQuestion("Is pluto a planet ?\nNo, pluto is not a planet");
-        }
-
-        void SetUpQuestion(Button button, String text)
-        {
-            button.Text = text;
-            button.Image = "icecream.png";
+            InsertNewQuestion("Are waffles better than pancakes?");
+            InsertNewQuestion("Is pluto a planet ?", "No, pluto is not a planet");
         }
 
         public void AnswerFirstQuestion(string answer)
         {
             Button questionButton = (Button)MyQuestions.Children[0];
-            questionButton.Text = questionButton.Text + "\n" + answer;
+            RemoveAnswer(questionButton);
+            SetUpQuestion(questionButton, questionButton.Text, answer);
         }
 
         public void StartAnswerTimer()
@@ -36,18 +31,41 @@ namespace AskAnyone
             });
         }
 
-        public void InsertNewQuestion(string questionText)
+        public void InsertNewQuestion(string questionText, string answerText = "-")
         {
-            Button newQuestion= new Button
+            MyQuestions.Children.Insert(0, CreateQuestionAnswerButton(questionText, answerText));
+        }
+        public void InsertNewAnswer(string questionText, string answerText = "-")
+        {
+            MyAnswersList.Children.Insert(0, CreateQuestionAnswerButton(questionText, answerText));
+        }
+
+        Button CreateQuestionAnswerButton(string questionText, string answerText)
+        {
+            Button newQuestion = new Button
             {
                 BackgroundColor = Color.Transparent,
                 MinimumHeightRequest = 75,
                 VerticalOptions = LayoutOptions.Start,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
             };
-            SetUpQuestion(newQuestion, questionText);
+            SetUpQuestion(newQuestion, questionText, answerText);
             newQuestion.Clicked += Handle_ViewQuestionClicked;
-            MyQuestions.Children.Insert(0, newQuestion);
+            return newQuestion;
+        }
+
+        void SetUpQuestion(Button button, string question, string answer)
+        {
+            button.Text = question + "\n" + answer;
+            button.Image = "icecream.png";
+        }
+        void RemoveAnswer(Button button)
+        {
+            int x = button.Text.IndexOf('\n');
+            if (x > 0)
+            {
+                button.Text = button.Text.Substring(0, x);
+            }
         }
 
         void Handle_NewQuestionClicked(object sender, System.EventArgs e)
