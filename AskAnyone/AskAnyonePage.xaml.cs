@@ -18,8 +18,14 @@ namespace AskAnyone
         public void AnswerFirstQuestion(string answer)
         {
             Button questionButton = (Button)MyQuestions.Children[0];
-            RemoveAnswer(questionButton);
-            SetUpQuestion(questionButton, questionButton.Text, answer);
+            AnswerQuestion(questionButton, answer);
+        }
+
+        void AnswerQuestion(Button question, string answer)
+        {
+            RemoveAnswer(question);
+            SetUpQuestion(question, question.Text, answer);
+            question.Image = "exc.png";
         }
 
         public void StartAnswerTimer()
@@ -51,14 +57,15 @@ namespace AskAnyone
             };
             SetUpQuestion(newQuestion, questionText, answerText);
             newQuestion.Clicked += Handle_ViewQuestionClicked;
+            newQuestion.Image = "hollowCircle.png";
             return newQuestion;
         }
 
         void SetUpQuestion(Button button, string question, string answer)
         {
             button.Text = question + "\n" + answer;
-            button.Image = "icecream.png";
         }
+
         void RemoveAnswer(Button button)
         {
             int x = button.Text.IndexOf('\n');
@@ -96,6 +103,7 @@ namespace AskAnyone
                 displayPage.DisplayQuestion(question);
                 //push the DisplayPage to the front
                 Navigation.PushAsync(displayPage);
+                button.Image = "hollowCircle.png";
 
             }
             catch (Exception ex)
