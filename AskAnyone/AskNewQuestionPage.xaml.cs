@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Xamarin.Forms;
 
 namespace AskAnyone
@@ -23,6 +24,7 @@ namespace AskAnyone
                     //return page
                     AskAnyonePage basePage = (AskAnyonePage)Navigation.NavigationStack[0];
                     basePage.InsertNewQuestion(question);
+                    basePage.StartAnswerTimer();
                     Navigation.PopAsync();
                 }
                 catch (Exception ex)

@@ -1,11 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace AskAnyone
 {
     public partial class AskAnyonePage : TabbedPage
     {
+
+        private double answerDelay = 10;
         public AskAnyonePage()
         {
             InitializeComponent();
@@ -18,6 +19,21 @@ namespace AskAnyone
         {
             button.Text = text;
             button.Image = "icecream.png";
+        }
+
+        public void AnswerFirstQuestion(string answer)
+        {
+            Button questionButton = (Button)MyQuestions.Children[0];
+            questionButton.Text = questionButton.Text + "\n" + answer;
+        }
+
+        public void StartAnswerTimer()
+        {
+            Device.StartTimer(TimeSpan.FromSeconds(answerDelay), () =>
+            {
+                AnswerFirstQuestion("The ask anyone group!");
+                return false;
+            });
         }
 
         public void InsertNewQuestion(string questionText)
