@@ -67,8 +67,7 @@
                          and a place for you to answer if not answered
                     -->
 
-                    <Button Text="Question sent to you goes here" BackgroundColor="Transparent" HeightRequest="100" Clicked="Handle_ViewQuestionClicked" />
-                    
+
                 </StackLayout>
 
             </ScrollView>
