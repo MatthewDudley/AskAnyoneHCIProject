@@ -25,20 +25,29 @@ namespace AskAnyone
             button.Image = "icecream.png";
         }
 
-        void InsertNewQuestion(string questionText)
+        public void InsertNewQuestion(string questionText)
         {
-            for(int i = questions.Count - 1; i > 0; i--)
+            for (int i = questions.Count - 1; i > 0; i--)
             {
                 SetUpQuestion(questions[i], questions[i - 1].Text);
             }
             SetUpQuestion(questions[0], questionText);
+            //Button newButton = new Button
+            //{
+            //    Text = "questionText",
+            //    BackgroundColor = Color.Transparent,
+            //    MinimumHeightRequest = 75,
+            //    VerticalOptions = LayoutOptions.Start,
+            //     HorizontalOptions = LayoutOptions.FillAndExpand,
+            //};
+            //newButton.Clicked += new 
+            //MyQuestions.Children.Add(newButton);
         }
 
         void Handle_NewQuestionClicked(object sender, System.EventArgs e)
         {
             try
             {
-                InsertNewQuestion("test");
                 //push the NewQuestionPage to the front
                 Navigation.PushAsync(new AskNewQuestionPage());
             }

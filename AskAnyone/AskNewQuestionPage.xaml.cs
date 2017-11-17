@@ -21,6 +21,8 @@ namespace AskAnyone
                 try
                 {
                     //return page
+                    AskAnyonePage basePage = (AskAnyonePage)Navigation.NavigationStack[0];
+                    basePage.InsertNewQuestion(question);
                     Navigation.PopAsync();
                 }
                 catch (Exception ex)
