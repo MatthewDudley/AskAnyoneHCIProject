@@ -32,7 +32,7 @@ namespace AskAnyone
             int x = buttonText.IndexOf('\n');
             if (x > 0)
             {
-                return buttonText.Substring(x + 1, 20);
+                return buttonText.Substring(x + 1, buttonText.Length - (x + 1));
             }
             return null;
         }

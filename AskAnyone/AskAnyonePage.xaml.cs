@@ -13,7 +13,7 @@ namespace AskAnyone
 
             SetUpQuestion(DefaultQuestion1, "Is pluto a planet?\nNo, pluto is not a planet");
             questions.Add(DefaultQuestion1);
-            SetUpQuestion(DefaultQuestion2, "Make Money\nFuck Bitches");
+            SetUpQuestion(DefaultQuestion2, "Smtext\nsmtext");
             questions.Add(DefaultQuestion2);
             questions.Add(HiddenQuestion1);
 
