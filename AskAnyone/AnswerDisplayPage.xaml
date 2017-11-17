@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AskAnyone.AnswerDisplayPage">
+    <ContentPage.Content>
+        <StackLayout x:Name="DisplayPageStack" Padding="10,40">
+
+            <Label Text="Question:" TextColor="Black" FontSize="20" HorizontalOptions="Center" />
+
+            <!-- Display the question here  -->
+            <Frame>
+
+                <Label x:Name="QuestionLabel" TextColor="Black" FontSize="16" HorizontalOptions="Center" />
+
+            </Frame>
+
+            <Label></Label>
+            <Label></Label>
+
+            <Label Text="Answer:" TextColor="Black" FontSize="20" HorizontalOptions="Center" />
+
+            <!-- Display the question here  -->
+            <Frame>
+
+                <Editor x:Name="AskFeild" Keyboard="Chat" FontSize="16" HeightRequest="100" />
+
+            </Frame>
+
+
+            <!-- Ask New Question button -->
+            <Button x:Name="AnswerButton" Text="Answer!" TextColor="White" BackgroundColor="#11a0ff" Clicked="Handle_AnswerClicked" Grid.Row="0" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

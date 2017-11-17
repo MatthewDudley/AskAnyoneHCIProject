@@ -13,19 +13,35 @@ namespace AskAnyone
 
             InsertNewQuestion("Are waffles better than pancakes?");
             InsertNewQuestion("Is pluto a planet ?", "No, pluto is not a planet");
+            InsertNewAnswer("Who is the most handsom man in CS?", "Definitely Dalton");
+            InsertNewAnswer("Was the moonlanding a hoax?");
+            ChangeFirstAnswerImage();
+        }
+
+        void ChangeFirstAnswerImage()
+        {
+            Button button = (Button)MyAnswersList.Children[0];
+            button.Image = "ques.png";
         }
 
         public void AnswerFirstQuestion(string answer)
         {
             Button questionButton = (Button)MyQuestions.Children[0];
             AnswerQuestion(questionButton, answer);
+            questionButton.Image = "exc.png";
+        }
+        public void AnswerFirstAnswer(string answer)
+        {
+            Button answerButton = (Button)MyAnswersList.Children[0];
+            AnswerQuestion(answerButton, answer);
+            answerButton.Clicked -= Handle_ViewAnswerClicked;
+            answerButton.Clicked += Handle_ViewQuestionClicked;
         }
 
         void AnswerQuestion(Button question, string answer)
         {
             RemoveAnswer(question);
             SetUpQuestion(question, question.Text, answer);
-            question.Image = "exc.png";
         }
 
         public void StartAnswerTimer()
@@ -39,11 +55,22 @@ namespace AskAnyone
 
         public void InsertNewQuestion(string questionText, string answerText = "-")
         {
-            MyQuestions.Children.Insert(0, CreateQuestionAnswerButton(questionText, answerText));
+            Button button = CreateQuestionAnswerButton(questionText, answerText);
+            button.Clicked += Handle_ViewQuestionClicked;
+            MyQuestions.Children.Insert(0, button);
         }
         public void InsertNewAnswer(string questionText, string answerText = "-")
         {
-            MyAnswersList.Children.Insert(0, CreateQuestionAnswerButton(questionText, answerText));
+            Button button = CreateQuestionAnswerButton(questionText, answerText);
+            if (answerText == "-")
+            {
+                button.Clicked += Handle_ViewAnswerClicked;
+            }
+            else
+            {
+                button.Clicked += Handle_ViewQuestionClicked;
+            }
+            MyAnswersList.Children.Insert(0, button);
         }
 
         Button CreateQuestionAnswerButton(string questionText, string answerText)
@@ -56,7 +83,6 @@ namespace AskAnyone
                 HorizontalOptions = LayoutOptions.FillAndExpand,
             };
             SetUpQuestion(newQuestion, questionText, answerText);
-            newQuestion.Clicked += Handle_ViewQuestionClicked;
             newQuestion.Image = "hollowCircle.png";
             return newQuestion;
         }
@@ -99,6 +125,30 @@ namespace AskAnyone
                 String question = button.Text;
                 //create a new DisplayPage displayPage
                 DisplayPage displayPage = new DisplayPage();
+                //pass the Display method the question
+                displayPage.DisplayQuestion(question);
+                //push the DisplayPage to the front
+                Navigation.PushAsync(displayPage);
+                button.Image = "hollowCircle.png";
+
+            }
+            catch (Exception ex)
+            {
+                //display error if caught
+                DisplayAlert("Exception on Answer Button:", ex.Message, "Ok", "Cancel");
+            }
+        }
+
+        void Handle_ViewAnswerClicked(object sender, System.EventArgs e)
+        {
+            try
+            {
+                //get the button that was pressed
+                Button button = sender as Button;
+                //get the text from that button (Question)
+                String question = button.Text;
+                //create a new DisplayPage displayPage
+                AnswerDisplayPage displayPage = new AnswerDisplayPage();
                 //pass the Display method the question
                 displayPage.DisplayQuestion(question);
                 //push the DisplayPage to the front
