@@ -29,7 +29,7 @@
                               you have asked as well as answers you recieve back 
                         -->
 
-                        <Button x:Name="DefaultQuestion1" Text="Hello" BackgroundColor="Transparent" HeightRequest="75" Clicked="Handle_ViewQuestionClicked" >
+                        <!--<Button x:Name="DefaultQuestion1" Text="Hello" BackgroundColor="Transparent" HeightRequest="75" Clicked="Handle_ViewQuestionClicked" >
 
                         </Button>
 
@@ -39,7 +39,7 @@
 
                         <Button x:Name="HiddenQuestion1" Text="" BackgroundColor="Transparent" HeightRequest="75" Clicked="Handle_ViewQuestionClicked" >
 
-                        </Button>
+                        </Button>-->
 
                     </StackLayout>
                 </ScrollView>

@@ -6,17 +6,12 @@ namespace AskAnyone
 {
     public partial class AskAnyonePage : TabbedPage
     {
-        List<Button> questions = new List<Button>();
         public AskAnyonePage()
         {
             InitializeComponent();
 
-            SetUpQuestion(DefaultQuestion1, "Is pluto a planet?\nNo, pluto is not a planet");
-            questions.Add(DefaultQuestion1);
-            SetUpQuestion(DefaultQuestion2, "Smtext\nsmtext");
-            questions.Add(DefaultQuestion2);
-            questions.Add(HiddenQuestion1);
-
+            InsertNewQuestion("Smtext\nsmtext");
+            InsertNewQuestion("Is pluto a planet ?\nNo, pluto is not a planet");
         }
 
         void SetUpQuestion(Button button, String text)
@@ -27,21 +22,16 @@ namespace AskAnyone
 
         public void InsertNewQuestion(string questionText)
         {
-            for (int i = questions.Count - 1; i > 0; i--)
+            Button newQuestion= new Button
             {
-                SetUpQuestion(questions[i], questions[i - 1].Text);
-            }
-            SetUpQuestion(questions[0], questionText);
-            //Button newButton = new Button
-            //{
-            //    Text = "questionText",
-            //    BackgroundColor = Color.Transparent,
-            //    MinimumHeightRequest = 75,
-            //    VerticalOptions = LayoutOptions.Start,
-            //     HorizontalOptions = LayoutOptions.FillAndExpand,
-            //};
-            //newButton.Clicked += new 
-            //MyQuestions.Children.Add(newButton);
+                BackgroundColor = Color.Transparent,
+                MinimumHeightRequest = 75,
+                VerticalOptions = LayoutOptions.Start,
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+            };
+            SetUpQuestion(newQuestion, questionText);
+            newQuestion.Clicked += Handle_ViewQuestionClicked;
+            MyQuestions.Children.Insert(0, newQuestion);
         }
 
         void Handle_NewQuestionClicked(object sender, System.EventArgs e)
