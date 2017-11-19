@@ -13,8 +13,8 @@ namespace AskAnyone
 
             InsertNewQuestion("Are waffles better than pancakes?");
             InsertNewQuestion("Is pluto a planet ?", "No, pluto is not a planet");
-            InsertNewAnswer("Who is the most handsom man in CS?", "Definitely Dalton");
-            InsertNewAnswer("Was the moonlanding a hoax?");
+            InsertNewAnswer("Is coffee better with cream and sugar", "Coffee is best black!");
+            InsertNewAnswer("Was the moon landing a hoax?");
             ChangeFirstAnswerImage();
         }
 
@@ -48,7 +48,7 @@ namespace AskAnyone
         {
             Device.StartTimer(TimeSpan.FromSeconds(answerDelay), () =>
             {
-                AnswerFirstQuestion("The ask anyone group!");
+                AnswerFirstQuestion("The Ask Anyone group!");
                 return false;
             });
         }
