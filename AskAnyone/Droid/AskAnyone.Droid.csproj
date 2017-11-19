@@ -166,6 +166,8 @@
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable\icecream.png" />
+    <AndroidResource Include="Resources\drawable\AskAnyoneIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AskAnyoneIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\exc.png" />
