@@ -13,7 +13,7 @@ namespace AskAnyone
 
             InsertNewQuestion("Are waffles better than pancakes?");
             InsertNewQuestion("Is pluto a planet ?", "No, pluto is not a planet");
-            InsertNewAnswer("Is coffee better with cream and sugar", "Coffee is best black!");
+            InsertNewAnswer("Is coffee better with cream and sugar?", "No coffee is better black");
             InsertNewAnswer("Was the moon landing a hoax?");
             ChangeFirstAnswerImage();
         }
