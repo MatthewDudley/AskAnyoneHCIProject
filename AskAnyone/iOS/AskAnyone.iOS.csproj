@@ -159,6 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\hollowCircle.png" />
+    <BundleResource Include="Resources\ques.png" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -171,9 +172,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\icecream.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\exc.png" />
