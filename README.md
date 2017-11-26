@@ -10,3 +10,5 @@ We have not tested on any iOS devices due to not having bought a developer accou
 
 If you have a device simply connect via USB to your computer and select the device in Visual Studio when you run the project. 
 If you have an emulator select the emulator in Visual Studio when you run the project.
+
+Project repository: https://github.com/MatthewDudley/AskAnyoneHCIProject
